@@ -50,7 +50,7 @@ defineProps({
                     <DollarSign class="h-4 w-4 text-muted-foreground" />
                 </CardHeader>
                 <CardContent>
-                    <div class="text-2xl font-bold">$45,231.89</div>
+                    <div class="text-2xl font-bold">Rp 45,231.89</div>
                     <p class="text-xs text-muted-foreground">
                         +20.1% from last month
                     </p>

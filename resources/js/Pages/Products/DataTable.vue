@@ -1,7 +1,7 @@
 <script setup>
 import { Button } from '@/components/ui/button';
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
-import { MoreHorizontal } from 'lucide-vue-next';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
+import { MoreHorizontal, SquarePen, Trash2 } from 'lucide-vue-next';
 
 const props = defineProps({
   payment: {
@@ -28,12 +28,8 @@ function copy(id) {
     </DropdownMenuTrigger>
     <DropdownMenuContent align="end">
       <DropdownMenuLabel>Actions</DropdownMenuLabel>
-      <DropdownMenuItem @click="copy(props.payment.id)">
-        Copy payment ID
-      </DropdownMenuItem>
-      <DropdownMenuSeparator />
-      <DropdownMenuItem>View customer</DropdownMenuItem>
-      <DropdownMenuItem>View payment details</DropdownMenuItem>
+      <DropdownMenuItem> <SquarePen /> Edit</DropdownMenuItem>
+      <DropdownMenuItem><Trash2 color="#e23232" /> Delete</DropdownMenuItem>
     </DropdownMenuContent>
   </DropdownMenu>
 </template>
