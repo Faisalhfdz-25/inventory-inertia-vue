@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -12,8 +13,24 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Products/Index');
+        // Eager load 'category' and map the data with category name
+        $products = Product::with('category')->get()->map(function ($product) {
+            return [
+                'id' => $product->id,
+                'name' => $product->name,
+                'description' => $product->description,
+                'stock' => $product->stock,
+                'price' => $product->price,
+                'is_active' => $product->is_active,
+                'category_name' => $product->category ? $product->category->name : 'No Category',
+            ];
+        });
+
+        return Inertia::render('Products/Index', [
+            'data' => $products
+        ]);
     }
+
 
     /**
      * Show the form for creating a new resource.

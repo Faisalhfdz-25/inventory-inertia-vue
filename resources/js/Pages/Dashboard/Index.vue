@@ -21,11 +21,19 @@ import { Head } from "@inertiajs/vue3";
 import {
     Activity,
     ArrowUpRight,
-    CreditCard,
+    ChartColumnStacked,
     DollarSign,
-    Users,
+    PackageSearch
 } from "lucide-vue-next";
 import Layout from "../../Layout/App.vue";
+
+
+
+defineProps({
+    totalProduct: Number,
+    totalCategory: Number,
+})
+
 </script>
 
 <template>
@@ -53,12 +61,12 @@ import Layout from "../../Layout/App.vue";
                     class="flex flex-row items-center justify-between space-y-0 pb-2"
                 >
                     <CardTitle class="text-sm font-medium">
-                        Subscriptions
+                        Total Products
                     </CardTitle>
-                    <Users class="h-4 w-4 text-muted-foreground" />
+                    <PackageSearch class="h-4 w-4 text-muted-foreground" />
                 </CardHeader>
                 <CardContent>
-                    <div class="text-2xl font-bold">+2350</div>
+                    <div class="text-2xl font-bold">{{ totalProduct }}</div>
                     <p class="text-xs text-muted-foreground">
                         +180.1% from last month
                     </p>
@@ -68,11 +76,11 @@ import Layout from "../../Layout/App.vue";
                 <CardHeader
                     class="flex flex-row items-center justify-between space-y-0 pb-2"
                 >
-                    <CardTitle class="text-sm font-medium"> Sales </CardTitle>
-                    <CreditCard class="h-4 w-4 text-muted-foreground" />
+                    <CardTitle class="text-sm font-medium"> Total Category </CardTitle>
+                    <ChartColumnStacked class="h-4 w-4 text-muted-foreground" />
                 </CardHeader>
                 <CardContent>
-                    <div class="text-2xl font-bold">+12,234</div>
+                    <div class="text-2xl font-bold">{{ totalCategory }}</div>
                     <p class="text-xs text-muted-foreground">
                         +19% from last month
                     </p>

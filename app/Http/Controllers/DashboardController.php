@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
@@ -13,8 +16,13 @@ class DashboardController extends Controller
      */
     public function index()
     {
+        $totalUser = User::count();
+        $totalProduct = Product::count();
+        $totalCategory = Category::count();
         return Inertia::render('Dashboard/Index', [
-            'user' => Auth::user(),
+            'totalUser' => $totalUser,
+            'totalProduct' => $totalProduct,
+            'totalCategory' => $totalCategory
         ]);
     }
 

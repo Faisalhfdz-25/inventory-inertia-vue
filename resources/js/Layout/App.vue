@@ -13,6 +13,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Link, useForm } from "@inertiajs/vue3";
 import {
     Bell,
+    ChartColumnStacked,
     CircleUser,
     Home,
     LineChart,
@@ -20,8 +21,7 @@ import {
     Package,
     Package2,
     Search,
-    ShoppingCart,
-    Users,
+    Users
 } from "lucide-vue-next";
 
 const form = useForm({});
@@ -78,7 +78,7 @@ const logout = () => {
                             "
                             class="flex items-center gap-3 rounded-lg px-3 py-2 transition-all hover:text-primary"
                         >
-                            <ShoppingCart class="h-4 w-4" />
+                            <ChartColumnStacked class="h-4 w-4" />
                             Categories
                             <!-- <Badge class="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
                 6
@@ -175,7 +175,7 @@ const logout = () => {
                                 "
                                 class="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-foreground hover:text-foreground"
                             >
-                                <ShoppingCart class="h-5 w-5" />
+                                <ChartColumnStacked class="h-5 w-5" />
                                 Categories
                                 <!-- <Badge class="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
                   6
