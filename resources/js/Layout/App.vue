@@ -1,6 +1,13 @@
 <script setup>
 import { Button } from "@/components/ui/button";
 import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card";
+import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
@@ -21,7 +28,7 @@ import {
     Package,
     Package2,
     Search,
-    Users
+    Users,
 } from "lucide-vue-next";
 
 const form = useForm({});
@@ -29,6 +36,14 @@ const form = useForm({});
 const logout = () => {
     form.post("/logout");
 };
+
+const openWhatsApp = () => {
+    window.open(
+        "https://wa.me/6289656519477?text=Hallo!,%20saya%20ingin%20upgrade%20pro%20inventory%20LIVS",
+        "_blank"
+    );
+};
+
 </script>
 
 <template>
@@ -112,22 +127,26 @@ const logout = () => {
                         </a>
                     </nav>
                 </div>
-                <!-- <div class="mt-auto p-4">
-          <Card>
-            <CardHeader class="p-2 pt-0 md:p-4">
-              <CardTitle>Upgrade to Pro</CardTitle>
-              <CardDescription>
-                Unlock all features and get unlimited access to our support
-                team.
-              </CardDescription>
-            </CardHeader>
-            <CardContent class="p-2 pt-0 md:p-4 md:pt-0">
-              <Button size="sm" class="w-full">
-                Upgrade
-              </Button>
-            </CardContent>
-          </Card>
-        </div> -->
+                <div class="mt-auto p-4">
+                    <Card>
+                        <CardHeader class="p-2 pt-0 md:p-4">
+                            <CardTitle>Upgrade to Pro</CardTitle>
+                            <CardDescription>
+                                Unlock all features and get unlimited access to
+                                our support team.
+                            </CardDescription>
+                        </CardHeader>
+                        <CardContent class="p-2 pt-0 md:p-4 md:pt-0">
+                            <Button
+                                size="sm"
+                                class="w-full"
+                                :onClick="openWhatsApp"
+                            >
+                                Upgrade
+                            </Button>
+                        </CardContent>
+                    </Card>
+                </div>
             </div>
         </div>
         <div class="flex flex-col">
@@ -208,22 +227,26 @@ const logout = () => {
                                 Analytics
                             </a>
                         </nav>
-                        <!-- <div class="mt-auto">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Upgrade to Pro</CardTitle>
-                  <CardDescription>
-                    Unlock all features and get unlimited access to our
-                    support team.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <Button size="sm" class="w-full">
-                    Upgrade
-                  </Button>
-                </CardContent>
-              </Card>
-            </div> -->
+                        <div class="mt-auto">
+                            <Card>
+                                <CardHeader class="p-2 pt-0 md:p-4">
+                                    <CardTitle>Upgrade to Pro</CardTitle>
+                                    <CardDescription>
+                                        Unlock all features and get unlimited
+                                        access to our support team.
+                                    </CardDescription>
+                                </CardHeader>
+                                <CardContent class="p-2 pt-0 md:p-4 md:pt-0">
+                                    <Button
+                                        size="sm"
+                                        class="w-full"
+                                        :onClick="openWhatsApp"
+                                        >
+                                        Upgrade
+                                    </Button>
+                                </CardContent>
+                            </Card>
+                        </div>
                     </SheetContent>
                 </Sheet>
                 <div class="w-full flex-1">
@@ -234,7 +257,7 @@ const logout = () => {
                             />
                             <Input
                                 type="search"
-                                placeholder="Search products..."
+                                placeholder="Search..."
                                 class="w-full appearance-none bg-background pl-8 shadow-none md:w-2/3 lg:w-1/3"
                             />
                         </div>

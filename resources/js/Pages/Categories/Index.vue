@@ -30,9 +30,18 @@ import {
     getSortedRowModel,
     useVueTable,
 } from "@tanstack/vue-table";
-import { ArrowUpDown, ChevronDown } from "lucide-vue-next";
+import { ArrowUpDown, ChevronDown, Plus } from "lucide-vue-next";
 import { h, ref } from "vue";
 import DropdownAction from "./DataTable.vue";
+
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogFooter,
+    DialogHeader,
+    DialogTitle,
+} from "@/components/ui/dialog";
 
 const props = defineProps({
     data: Array,
@@ -138,6 +147,12 @@ const table = useVueTable({
         },
     },
 });
+
+const showDialog = ref(false);
+
+const showDialogCreate = () => {
+    showDialog.value = true;
+};
 </script>
 
 <template>
@@ -149,13 +164,18 @@ const table = useVueTable({
         <div class="w-full">
             <div class="flex gap-2 items-center py-4">
                 <Input
-                    class="max-w-sm"
+                    class="w-60"
                     placeholder="Filter Name..."
                     :model-value="table.getColumn('name')?.getFilterValue()"
                     @update:model-value="
                         table.getColumn('name')?.setFilterValue($event)
                     "
                 />
+
+                <Button variant="outline" @click="showDialogCreate">
+                    <Plus class="mr-2"></Plus>
+                    Create Category
+                </Button>
                 <DropdownMenu>
                     <DropdownMenuTrigger as-child>
                         <Button variant="outline" class="ml-auto">
@@ -268,6 +288,27 @@ const table = useVueTable({
                     </Button>
                 </div>
             </div>
+
+            <Dialog v-model:open="showDialog">
+                <DialogContent class="sm:max-w-[425px]">
+                    <DialogHeader>
+                        <DialogTitle>Create Category</DialogTitle>
+                        <DialogDescription>
+                            Make changes to your profile here. Click save when
+                            you're done.
+                        </DialogDescription>
+                    </DialogHeader>
+                    <div class="grid py-4">
+                        <div class="grid gap-2">
+                            <Label for="name"> Name </Label>
+                            <Input id="name" class="col-span-3" />
+                        </div>
+                    </div>
+                    <DialogFooter>
+                        <Button type="submit"> Save changes </Button>
+                    </DialogFooter>
+                </DialogContent>
+            </Dialog>
         </div>
     </Layout>
 </template>
