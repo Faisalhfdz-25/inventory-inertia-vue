@@ -2,9 +2,9 @@
 
 <p align="center">
     <a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="200" alt="Laravel Logo"></a>
-    <a href="https://inertiajs.com" target="_blank"><img src="https://raw.githubusercontent.com/inertiajs/inertia/master/.github/assets/inertia-logo.svg" width="100" alt="Inertia.js Logo"></a>
+    <a href="https://inertiajs.com" target="_blank"><img src="https://avatars.githubusercontent.com/u/47703742?s=200&v=4" width="100" alt="Inertia.js Logo"></a>
     <a href="https://vuejs.org" target="_blank"><img src="https://vuejs.org/images/logo.png" width="100" alt="Vue 3 Logo"></a>
-    <a href="https://github.com/shadcn/shadn-vue" target="_blank"><img src="https://shadcn.dev/favicon.ico" width="100" alt="Shadn Vue Logo"></a>
+    <a href="https://github.com/shadcn/shadn-vue" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdvQ8P74Q9qIdvz32mDGS6HbBAffF8QUICbBl-jON5Aq3Fqc3uKS9qYdc8NJmr3kSlCN8&usqp=CAU" width="100" alt="Shadn Vue Logo"></a>
 </p>
 
 <p align="center">
