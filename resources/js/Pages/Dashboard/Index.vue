@@ -50,7 +50,7 @@ defineProps({
                     <DollarSign class="h-4 w-4 text-muted-foreground" />
                 </CardHeader>
                 <CardContent>
-                    <div class="text-2xl font-bold">$45,231.89</div>
+                    <div class="text-2xl font-bold">Rp 45,231.89</div>
                     <p class="text-xs text-muted-foreground">
                         +20.1% from last month
                     </p>
@@ -277,84 +277,6 @@ defineProps({
                 <CardHeader>
                     <CardTitle>Recent Sales</CardTitle>
                 </CardHeader>
-                <!-- <CardContent class="grid gap-8">
-                    <div class="flex items-center gap-4">
-                        <Avatar class="hidden h-9 w-9 sm:flex">
-                            <AvatarImage src="https://www.shadcn-vue.com/avatars/01.png" alt="Avatar" />
-                            <AvatarFallback>OM</AvatarFallback>
-                        </Avatar>
-                        <div class="grid gap-1">
-                            <p class="text-sm font-medium leading-none">
-                                Olivia Martin
-                            </p>
-                            <p class="text-sm text-muted-foreground">
-                                olivia.martin@email.com
-                            </p>
-                        </div>
-                        <div class="ml-auto font-small">+$1,999.00</div>
-                    </div>
-                    <div class="flex items-center gap-4">
-                        <Avatar class="hidden h-9 w-9 sm:flex">
-                            <AvatarImage src="/avatars/02.png" alt="Avatar" />
-                            <AvatarFallback>JL</AvatarFallback>
-                        </Avatar>
-                        <div class="grid gap-1">
-                            <p class="text-sm font-medium leading-none">
-                                Jackson Lee
-                            </p>
-                            <p class="text-sm text-muted-foreground">
-                                jackson.lee@email.com
-                            </p>
-                        </div>
-                        <div class="ml-auto font-medium">+$39.00</div>
-                    </div>
-                    <div class="flex items-center gap-4">
-                        <Avatar class="hidden h-9 w-9 sm:flex">
-                            <AvatarImage src="/avatars/03.png" alt="Avatar" />
-                            <AvatarFallback>IN</AvatarFallback>
-                        </Avatar>
-                        <div class="grid gap-1">
-                            <p class="text-sm font-medium leading-none">
-                                Isabella Nguyen
-                            </p>
-                            <p class="text-sm text-muted-foreground">
-                                isabella.nguyen@email.com
-                            </p>
-                        </div>
-                        <div class="ml-auto font-medium">+$299.00</div>
-                    </div>
-                    <div class="flex items-center gap-4">
-                        <Avatar class="hidden h-9 w-9 sm:flex">
-                            <AvatarImage src="/avatars/04.png" alt="Avatar" />
-                            <AvatarFallback>WK</AvatarFallback>
-                        </Avatar>
-                        <div class="grid gap-1">
-                            <p class="text-sm font-medium leading-none">
-                                William Kim
-                            </p>
-                            <p class="text-sm text-muted-foreground">
-                                will@email.com
-                            </p>
-                        </div>
-                        <div class="ml-auto font-medium">+$99.00</div>
-                    </div>
-                    <div class="flex items-center gap-4">
-                        <Avatar class="hidden h-9 w-9 sm:flex">
-                            <AvatarImage src="/avatars/05.png" alt="Avatar" />
-                            <AvatarFallback>SD</AvatarFallback>
-                        </Avatar>
-                        <div class="grid gap-1">
-                            <p class="text-sm font-medium leading-none">
-                                Sofia Davis
-                            </p>
-                            <p class="text-sm text-muted-foreground">
-                                sofia.davis@email.com
-                            </p>
-                        </div>
-                        <div class="ml-auto font-medium">+$39.00</div>
-                    </div>
-                </CardContent> -->
-
                 <CardContent class="space-y-4 p-4">
                     <div class="flex items-center gap-4">
                         <Avatar class="h-10 w-10">

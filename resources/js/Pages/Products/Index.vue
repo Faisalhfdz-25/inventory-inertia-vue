@@ -31,9 +31,18 @@ import {
     getSortedRowModel,
     useVueTable,
 } from "@tanstack/vue-table";
-import { ArrowUpDown, ChevronDown } from "lucide-vue-next";
+import { ArrowUpDown, ChevronDown, Plus } from "lucide-vue-next";
 import { h, ref } from "vue";
 import DropdownAction from "./DataTable.vue";
+
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogFooter,
+    DialogHeader,
+    DialogTitle,
+} from "@/components/ui/dialog";
 
 const props = defineProps({
     data: Array,
@@ -114,14 +123,14 @@ const columns = [
         accessorKey: "is_active",
         header: "Status",
         cell: ({ row }) => {
-            const status = row.getValue('is_active');
+            const status = row.getValue("is_active");
 
             if (status) {
-                return h("div", h(Badge, 'Active'))
-            }else{
-                return h("div", h(Badge, {variant: 'outline'}, 'Inactive'))
+                return h("div", h(Badge, "Active"));
+            } else {
+                return h("div", h(Badge, { variant: "outline" }, "Inactive"));
             }
-        }
+        },
     },
     {
         id: "actions",
@@ -182,6 +191,12 @@ const table = useVueTable({
         },
     },
 });
+
+const showDialog = ref(false);
+
+const showDialogCreate = () => {
+    showDialog.value = true;
+};
 </script>
 
 <template>
@@ -193,13 +208,19 @@ const table = useVueTable({
         <div class="w-full">
             <div class="flex gap-2 items-center py-4">
                 <Input
-                    class="max-w-sm"
+                    class="w-60"
                     placeholder="Filter Name..."
                     :model-value="table.getColumn('name')?.getFilterValue()"
                     @update:model-value="
                         table.getColumn('name')?.setFilterValue($event)
                     "
                 />
+
+                <Button variant="outline" @click="showDialogCreate">
+                    <Plus class="mr-2"></Plus>
+                    Create Product
+                </Button>
+
                 <DropdownMenu>
                     <DropdownMenuTrigger as-child>
                         <Button variant="outline" class="ml-auto">
@@ -312,6 +333,31 @@ const table = useVueTable({
                     </Button>
                 </div>
             </div>
+
+            <Dialog v-model:open="showDialog">
+                <DialogContent class="sm:max-w-[425px]">
+                    <DialogHeader>
+                        <DialogTitle>Create Product</DialogTitle>
+                        <DialogDescription>
+                            Make changes to your profile here. Click save when
+                            you're done.
+                        </DialogDescription>
+                    </DialogHeader>
+                    <div class="grid gap-y-2">
+                        <div class="grid gap-2">
+                            <Label for="name"> Name </Label>
+                            <Input id="name" />
+                        </div>
+                        <div class="grid gap-2">
+                            <Label for="description"> Description </Label>
+                            <Input id="description"  />
+                        </div>
+                    </div>
+                    <DialogFooter>
+                        <Button type="submit"> Save changes </Button>
+                    </DialogFooter>
+                </DialogContent>
+            </Dialog>
         </div>
     </Layout>
 </template>
